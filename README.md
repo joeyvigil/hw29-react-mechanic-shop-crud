@@ -1,6 +1,6 @@
 # hw29-react-mechanic-shop-crud
 
-Create a React front end for your Mechanic Workshop Flask Backend.
+*Create a React front end for your Mechanic Workshop Flask Backend.*
 
 ## Flask Touch-Up
 
