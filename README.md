@@ -23,6 +23,12 @@ Before starting, ensure that you have **CORS** active on your Flask server:
 > **Note:**  
 > If your app isn't deployed, you can run your Flask app locally and make API requests from your React app to `localhost:5000` (similar to Postman).
 
+## Render free DB is deactivate to so need to make a new one
+1. Created new render database **mechanic_db2**
+2. Get service id from new db, -> add to github secrets as SERVICE_ID
+3. Get external db url from new db -> add to render web service environment variables as SQLALCHEMY_DATABASE_URI
+4. Pushing commit now to trigger github actions (might have to manually deploy on render)
+
 ## React Front End
 
 Create a front end for your Mechanic Shop API, similar to what we did in class.
