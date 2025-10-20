@@ -5,7 +5,7 @@ const main = () => {
     <div className='container'> 
         <div className='small-container'>
         <br /><h1>Sign in</h1>
-        <form>
+        <form onSubmit={(e)=> formSubmit(e)}>
             {/* Email input */}
             <div className="form-outline mb-4">
                 <input type="email" id="form2Example1" className="form-control" />
