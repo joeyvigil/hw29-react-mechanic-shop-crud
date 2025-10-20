@@ -111,7 +111,9 @@ rafce
 ```
 
 Dylan's related projects:
+
 https://github.com/dkatina/fullstack-frontend
+
 https://github.com/dkatina/WM-backend
 
 https://github.com/dkatina/react-ecom
