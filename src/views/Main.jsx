@@ -5,8 +5,7 @@ const main = () => {
     const formSubmit = (e) =>{
         e.preventDefault();
         console.log("form submitted");
-        console.log(email);
-        console.log(password);
+        console.log(e);
     }
     const [password, setPassword] = React.useState("");
     const [email, setEmail] = React.useState("");
