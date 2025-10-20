@@ -1,33 +1,39 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
+import Main from './views/main.jsx'
+import Profile from './views/profile.jsx'
+import Update from './views/update.jsx'
+import Register from './views/Register.jsx'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const navigate = useNavigate();
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <div className='mynavbar'>
+        <div className='container'>
+        <nav className="navbar">
+
+
+          <div className="navbar-brand">
+            <img src="/images/react.svg" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" /> React Mechanic Shop
+          </div>
+          <button className="btn btn-outline-success" onClick={() => navigate('/') }> Login</button>
+
+          
+
+        </nav>
+        </div>
+        </div>
+        <Routes>
+          <Route path='/' element={<Main/>} />
+          <Route path='/profile' element={<Profile/>} />
+          <Route path='/update' element={<Update/>} />
+          <Route path='/register' element={<Register/>} />
+        </Routes>
+
     </>
   )
 }
