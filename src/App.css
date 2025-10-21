@@ -1,36 +1,62 @@
+:root {
+  --React: #61dbfb;
+  --Rosewater: #dc8a78;
+  --Pink: #ea76cb;
+  --Mauve: #8839ef;
+  --Maroon: #e64553;
+  --Peach: #fe640b;
+  --Yellow: #df8e1d;
+  --Green: #40a02b;
+  --Teal: #179299;
+  --Sapphire: #209fb5;
+  --Lavender: #7287fd;
+  --Base0: #eff1f5;
+  --Base1: #ccd0da;
+  --Base2: #acb0be;
+  --Base3: #8c8fa1;
+  --Base4: #6c6f85;
+  --Base5: #4c4f69;
+  --Base6: #111;
+}   
+
 * {
-    font-family: "Geo", sans-serif;
+  font-family: "Geo", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .mynavbar {
   margin-bottom: 20px;
-  background-color: #333;
-  color: white;
+  background-color: var(--Base6);
+  color: var(--Base0);
 }
 
 .navbar-brand {
-  color: white;
-
+  color: var(--Base0);
   font-size: 1.8em;
 }
 
 .navbar-brand:hover {
-  color: white
+  color: var(--Base0)
 }
 
 .btn {
-  color: white;
-  border-color: white;
+  color: var(--Base0);
+  border-color: var(--Base0);
 }
 
 .btn:hover {
-  background-color: #61dbfb;
-  color: #333;
+  background-color: var(--React);
+  color: var(--Base6);
 }
 
 .small-container {
   max-width: 300px;
   margin: auto;
+}
+
+.btn-primary {
+  background-color: var(--Base0);
+  border-color: var(--Base6);
+  color: var(--Base6);
 }

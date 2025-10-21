@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react';
 
 const main = () => {
     const formSubmit = (e) =>{
@@ -11,16 +10,13 @@ const main = () => {
     const [email, setEmail] = React.useState("");
 
 
-
-
-
   return (
     <div className='container'> 
         <div className='small-container'>
-        <br /><h1 className='text-center'>Welcome</h1>
+        <h1 className='text-center'>Welcome</h1>
         <form onSubmit={(e)=> formSubmit(e)}>
             {/* Email input */}
-            <div className="form-outline mb-4">
+            <div className="mb-2">
                 <input type="email" 
                   className="form-control" 
                   id="email" 
@@ -31,7 +27,7 @@ const main = () => {
             </div>
 
             {/* Password input */}
-            <div className="form-outline mb-4">
+            <div className="mb-2">
                 <input type="password" 
                   className="form-control" 
                   id="password" 
@@ -49,8 +45,8 @@ const main = () => {
             {/* Register buttons */}
             <div className="text-center">
                 <p>Not a member? <a href="/register">Register</a></p>
-                
             </div>
+
         </form>
         </div>
 

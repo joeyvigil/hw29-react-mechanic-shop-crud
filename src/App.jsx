@@ -16,13 +16,10 @@ function App() {
         <div className='container'>
         <nav className="navbar">
 
-
           <div className="navbar-brand">
             <img src="/images/react.svg" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" /> React Mechanic Shop
           </div>
           <button className="btn btn-outline-success" onClick={() => navigate('/') }> Login</button>
-
-          
 
         </nav>
         </div>
