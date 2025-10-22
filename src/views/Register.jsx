@@ -1,24 +1,51 @@
 import React from 'react'
 
 const Register = () => {
-      const formSubmit = (e) =>{
-          e.preventDefault();
-          console.log("form submitted");
-          console.log("Register form data:");
-          console.log("First Name:", first);
-          console.log("Last Name:", last);
-          console.log("Email:", email);
-          console.log("Password:", password);
-          console.log("Repeat Password:", repeatPassword);
-          console.log("Address:", address);
-          console.log(e);
-      }
-      const [first, setFirst] = React.useState("");
-      const [last, setLast] = React.useState("");
-      const [email, setEmail] = React.useState("");
-      const [password, setPassword] = React.useState("");
-      const [repeatPassword, setRepeatPassword] = React.useState("");
-      const [address, setAddress] = React.useState("");
+    const formSubmit = (e) =>{
+        e.preventDefault();
+        console.log("Form", first, last, email, password, repeatPassword, address);
+        console.log(e);
+        if (password !== repeatPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        async function postData(){
+            const response = await fetch('https://hw22-api-deployment.onrender.com/mechanics', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    first_name: first,
+                    last_name: last,
+                    email: email,
+                    password: password,
+                    address: address,
+                    salary: 50000
+                })
+            });
+            const data = await response.json();
+            console.log("Response data:", data);
+            if (response.ok) {
+                alert("Registration successful  for " + data.first_name + " " + data.last_name);
+            } else {
+                alert("Registration failed: " + data.Exception);
+            }
+        }
+        postData();
+        
+
+
+
+    }
+
+    const [first, setFirst] = React.useState("");
+    const [last, setLast] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const [repeatPassword, setRepeatPassword] = React.useState("");
+    const [address, setAddress] = React.useState("");
 
 
 

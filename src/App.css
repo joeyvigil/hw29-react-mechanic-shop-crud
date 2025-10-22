@@ -1,4 +1,4 @@
-//
+/* https://catppuccin.com/palette/   Latte*/
 :root {
   --React: #61dbfb;
   --Rosewater: #dc8a78;
@@ -49,6 +49,7 @@
 .btn:hover {
   background-color: var(--React);
   color: var(--Base6);
+  border-color: var(--Yellow);
 }
 
 .small-container {

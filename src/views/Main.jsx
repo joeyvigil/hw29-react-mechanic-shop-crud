@@ -3,8 +3,35 @@ import React from 'react'
 const main = () => {
     const formSubmit = (e) =>{
         e.preventDefault();
-        console.log("form submitted");
+        console.log("form: ", email, password);
         console.log(e);
+        // curl -X 'POST' \
+        //   'https://hw22-api-deployment.onrender.com/mechanics/login' \
+        //   -H 'accept: application/json' \
+        //   -H 'Content-Type: application/json' \
+        //   -d '{
+        //   "email": "bolts@gmail.com",
+        //   "password": "securepassword"
+        // }'
+        async function postData(){
+            const response = await fetch('https://hw22-api-deployment.onrender.com/mechanics/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            });
+            const data = await response.json();
+            console.log("Response data:", data);
+            if (response.ok) {
+                alert("Login successful for " + data.first_name + " " + data.last_name);
+            }
+            else {
+                alert("Login failed: " + data);
+            }
     }
     const [password, setPassword] = React.useState("");
     const [email, setEmail] = React.useState("");
