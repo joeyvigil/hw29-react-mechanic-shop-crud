@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import Login from './views/Login.jsx'
-import Profile from './views/profile.jsx'
-import Update from './views/update.jsx'
+import Profile from './views/Profile.jsx'
+import Update from './views/Update.jsx'
 import Register from './views/Register.jsx'
 import './App.css'
 
