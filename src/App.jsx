@@ -8,7 +8,7 @@ import Register from './views/Register.jsx'
 import './App.css'
 
 function App() {
-  const [profile, setProfile] = useState(null);
+  const [profileInfo, setProfileInfo] = useState(null);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
@@ -24,16 +24,16 @@ function App() {
         });
         const data = await response.json();
         if (response.ok) {
-          setProfile(data);
+          setProfileInfo(data);
           console.log("Fetched profile:", data);
         } else {
-          setProfile(null);
+          setProfileInfo(null);
           localStorage.removeItem('token');
         }
       }
       fetchProfile();
     } else {
-      setProfile(null);
+      setProfileInfo(null);
     }
   }, [token, navigate]);
 
@@ -49,7 +49,7 @@ function App() {
 
           <div className='d-flex'>
           {token ? (<>
-            <h4 className='me-4'>Hello {profile?.first_name} </h4>
+            <h4 className='me-4'>Hello {profileInfo?.first_name} </h4>
             <a className='me-4' href="/profile">profile</a> 
             <a className='me-4' href="/update">update</a> 
             <button className="btn" onClick={() => {
