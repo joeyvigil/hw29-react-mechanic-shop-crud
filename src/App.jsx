@@ -4,6 +4,7 @@ import Login from './views/Login.jsx'
 import Profile from './views/Profile.jsx'
 import Update from './views/Update.jsx'
 import Register from './views/Register.jsx'
+
 import './App.css'
 
 function App() {

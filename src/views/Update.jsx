@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const update = () => {
+const Update = () => {
   const [profile, setProfile] = React.useState(null);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
@@ -148,4 +148,4 @@ const update = () => {
   )
 }
 
-export default update
+export default Update
