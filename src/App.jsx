@@ -50,6 +50,7 @@ function App() {
           {token ? (<>
             <h4 className='me-4'>Hello {profile?.first_name} </h4>
             <a className='me-4' href="/profile">profile</a> 
+            <a className='me-4' href="/update">update</a> 
             <button className="btn" onClick={() => {
               localStorage.removeItem('token');
               navigate('/');
