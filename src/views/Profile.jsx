@@ -36,22 +36,23 @@ const profile = () => {
     <div className='container'>
       <div className='row'>
       <div className='col text-center me-2'> 
+        
       {profile ? (
-        <div className="profile-details">
+        <>
           <h1>{profile.first_name} {profile.last_name}</h1>
           <p>Email: {profile.email}</p>
           <p>Address: {profile.address}</p>
           <p>Salary: ${profile.salary}</p>
           <button className='btn btn-primary' onClick={() => navigate('/update')}>Update Profile</button>
-        </div>
+        </>
       ) : (
         <p>Loading profile...</p>
       )}
       </div>
         <div className='col text-center me-2'>
-          <img
-            src={`https://avatar.iran.liara.run/username?username=${profile?.first_name || 'John'}+${profile?.last_name || 'Doe'}`}
-            alt="Profile Avatar"
+          <img 
+            src={`https://eu.ui-avatars.com/api/?name=${profile?.first_name || 'John'}+${profile?.last_name || 'Doe'}&size=250&background=random&rounded=true&bold=true&color=ffffff`}
+            alt={`Avatar`}
           />
         </div>
       </div>

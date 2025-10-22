@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const register = () => {
+  const navigate = useNavigate();
     const formSubmit = (e) =>{
         e.preventDefault();
         console.log("Form", first, last, email, password, repeatPassword, address);
@@ -29,6 +31,7 @@ const register = () => {
             console.log("Response data:", data);
             if (response.ok) {
                 alert("Registration successful  for " + data.first_name + " " + data.last_name);
+                navigate('/');
             } else {
                 alert("Registration failed: " + data.Exception);
             }
