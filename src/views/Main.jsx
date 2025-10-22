@@ -5,14 +5,7 @@ const main = () => {
         e.preventDefault();
         console.log("form: ", email, password);
         console.log(e);
-        // curl -X 'POST' \
-        //   'https://hw22-api-deployment.onrender.com/mechanics/login' \
-        //   -H 'accept: application/json' \
-        //   -H 'Content-Type: application/json' \
-        //   -d '{
-        //   "email": "bolts@gmail.com",
-        //   "password": "securepassword"
-        // }'
+
         async function postData(){
             const response = await fetch('https://hw22-api-deployment.onrender.com/mechanics/login', {
                 method: 'POST',
@@ -27,12 +20,19 @@ const main = () => {
             const data = await response.json();
             console.log("Response data:", data);
             if (response.ok) {
-                alert("Login successful for " + data.first_name + " " + data.last_name);
+                alert("message: " + data.message);
+                localStorage.setItem('token', data.token);
+                console.log("Token stored in localStorage: ", data.token);
             }
             else {
-                alert("Login failed: " + data);
+                alert("Login failed: " + data.message);
             }
+        }
+        postData();
+
     }
+    
+
     const [password, setPassword] = React.useState("");
     const [email, setEmail] = React.useState("");
 
