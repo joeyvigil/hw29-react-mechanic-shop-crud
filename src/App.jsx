@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
-import Main from './views/main.jsx'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import Login from './views/Login.jsx'
 import Profile from './views/profile.jsx'
 import Update from './views/update.jsx'
 import Register from './views/Register.jsx'
@@ -64,7 +64,7 @@ function App() {
         </div>
         </div>
         <Routes>
-          <Route path='/' element={<Main/>} />
+          <Route path='/' element={<Login/>} />
           <Route path='/profile' element={<Profile/>} />
           <Route path='/update' element={<Update/>} />
           <Route path='/register' element={<Register/>} />
