@@ -121,7 +121,7 @@ const register = () => {
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   placeholder='123 Mulholland Drive, Los Angeles, CA' required></input>
-                <label className="form-label">Email address</label>
+                <label className="form-label">Address</label>
             </div>
 
             {/* Checkbox input */}

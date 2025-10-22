@@ -32,6 +32,34 @@ const profile = () => {
     }
   }, [token, navigate]);
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    const confirmDelete = window.confirm("Are you sure you want to delete your profile? This action cannot be undone.");
+    // curl -X 'DELETE' \
+    // 'https://hw22-api-deployment.onrender.com/mechanics/7' \
+    // -H 'accept: application/json' \
+    // -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjExNzQ0MzUsImlhdCI6MTc2MTE3MDgzNSwic3ViIjoiMTMifQ.hM2ftSwh40ZsCFYFaXxLdkXuQUUeLkhJq_f2jXRw_Eo'
+    async function deleteProfile(){
+        const response = await fetch(`https://hw22-api-deployment.onrender.com/mechanics/${profile.id}`, {
+            method: 'DELETE',
+            headers: {
+                'accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        if (response.ok) {
+            alert("Profile deleted successfully.");
+            localStorage.removeItem('token');
+            navigate('/');
+        } else {
+            alert("Failed to delete profile.");
+        }
+    }
+    if (confirmDelete) {
+      deleteProfile();
+    }
+  }
+
   return (
     <div className='container'>
       <div className='row'>
@@ -43,7 +71,8 @@ const profile = () => {
           <p>Email: {profile.email}</p>
           <p>Address: {profile.address}</p>
           <p>Salary: ${profile.salary}</p>
-          <button className='btn btn-primary' onClick={() => navigate('/update')}>Update Profile</button>
+          <button className='btn btn-primary me-2' onClick={() => navigate('/update')}>Update Profile</button>
+          <button className='btn btn-danger me-2' onClick={(e) => handleDelete(e)}>Delete</button>
         </>
       ) : (
         <p>Loading profile...</p>
