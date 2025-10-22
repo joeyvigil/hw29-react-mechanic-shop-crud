@@ -1,6 +1,6 @@
 import React, { use, useEffect } from 'react'
 
-const main = () => {
+const Main = () => {
     const formSubmit = (e) =>{
         e.preventDefault();
         console.log("form: ", email, password);
@@ -82,4 +82,4 @@ const main = () => {
   )
 }
 
-export default main
+export default Main

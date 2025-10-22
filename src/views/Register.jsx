@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const register = () => {
+const Register = () => {
   const navigate = useNavigate();
     const formSubmit = (e) =>{
         e.preventDefault();
@@ -143,4 +143,4 @@ const register = () => {
   )
 }
 
-export default register
+export default Register
