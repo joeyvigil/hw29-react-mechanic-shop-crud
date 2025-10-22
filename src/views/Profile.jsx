@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
-const Profile = () => {
+const profile = () => {
   const [profile, setProfile] = React.useState(null);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
@@ -60,4 +60,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default profile

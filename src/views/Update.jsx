@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const Update = () => {
+const update = () => {
   const [profile, setProfile] = React.useState(null);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
@@ -66,9 +66,9 @@ const Update = () => {
                 first_name: first,
                 last_name: last,
                 address: address,
-                email: profile.email,
-                password: profile.password,
-                salary: profile.salary
+                password: '',
+                email: '',
+                salary: ''
             })
         });
         if (response.ok) {
@@ -148,4 +148,4 @@ const Update = () => {
   )
 }
 
-export default Update
+export default update
