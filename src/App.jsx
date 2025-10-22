@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import Main from './views/main.jsx'
 import Profile from './views/profile.jsx'
@@ -7,8 +7,34 @@ import Register from './views/Register.jsx'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [profile, setProfile] = useState(null);
   const navigate = useNavigate();
+  const token = localStorage.getItem('token');
+
+  useEffect(() => {
+    if (token) {
+      async function fetchProfile() {
+        const response = await fetch('https://hw22-api-deployment.onrender.com/mechanics/profile', {
+          method: 'GET',
+          headers: {
+            'accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+          }
+        });
+        const data = await response.json();
+        if (response.ok) {
+          setProfile(data);
+          console.log("Fetched profile:", data);
+        } else {
+          setProfile(null);
+          localStorage.removeItem('token');
+        }
+      }
+      fetchProfile();
+    } else {
+      setProfile(null);
+    }
+  }, [token, navigate]);
 
   return (
     <>
@@ -19,7 +45,19 @@ function App() {
           <div className="navbar-brand">
             <img src="/images/react.svg" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" /> React Mechanic Shop
           </div>
-          <button className="btn btn-outline-success" onClick={() => navigate('/') }> Login</button>
+
+          <div className='d-flex'>
+          {token ? (<>
+            <h4 className='me-4'>Hello {profile?.first_name} </h4>
+            <a className='me-4' href="/profile">profile</a> 
+            <button className="btn" onClick={() => {
+              localStorage.removeItem('token');
+              navigate('/');
+            }}>Logout</button></>
+          ) : (
+            <button className="btn" onClick={() => navigate('/')}>Login</button>
+          )}
+          </div>
 
         </nav>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use, useEffect } from 'react'
 
 const main = () => {
     const formSubmit = (e) =>{
@@ -23,6 +23,7 @@ const main = () => {
                 alert("message: " + data.message);
                 localStorage.setItem('token', data.token);
                 console.log("Token stored in localStorage: ", data.token);
+                window.location.reload();
             }
             else {
                 alert("Login failed: " + data.message);
@@ -31,7 +32,7 @@ const main = () => {
         postData();
 
     }
-    
+
 
     const [password, setPassword] = React.useState("");
     const [email, setEmail] = React.useState("");

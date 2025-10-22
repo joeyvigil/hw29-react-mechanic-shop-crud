@@ -62,3 +62,20 @@
   border-color: var(--Base6);
   color: var(--Base6);
 }
+
+a {
+  color: var(--Mauve);
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0px;
+}
+a:hover {
+  color: var(--Lavender);
+  /* text-decoration: underline; */
+}
+
+h4 {
+  font-size: 30px;
+  color: var(--Base1);
+  margin: 0;
+}

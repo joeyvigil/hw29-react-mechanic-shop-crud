@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Register = () => {
+const register = () => {
     const formSubmit = (e) =>{
         e.preventDefault();
         console.log("Form", first, last, email, password, repeatPassword, address);
@@ -140,4 +140,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default register
