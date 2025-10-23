@@ -84,7 +84,7 @@ const Update = () => {
   return (
     <div className='container'>
       <div className='row'>
-      <div className='col-6'> 
+      <div className='col-12 col-xxl-6'> 
       <div className='small-container'>
         <h1 className='text-center'>Update Profile</h1>
         
@@ -135,8 +135,8 @@ const Update = () => {
       )}
       </div>
 </div>
-        <div className='col-6'>
-          <div className='text-center me-2'>
+        <div className='col-12 col-xxl-6'>
+          <div className='text-center me-2' style={{margin: '20px'}}>
           <img 
             src={`https://eu.ui-avatars.com/api/?name=${profile?.first_name || 'John'}+${profile?.last_name || 'Doe'}&size=250&background=random&rounded=true&bold=true&color=ffffff`}
             alt={`Avatar`}

@@ -55,7 +55,7 @@
 }
 
 .small-container {
-  max-width: 350px;
+  width: 350px;
   margin: auto;
   border: 1px solid var(--Base5);
   padding: 20px;
@@ -72,13 +72,13 @@
 }
 
 a {
-  color: var(--Mauve);
+  color: var(--Sapphire);
   text-decoration: none;
   font-size: 20px;
   margin: 0px;
 }
 a:hover {
-  color: var(--Lavender);
+  color: var(--Mauve);
   /* text-decoration: underline; */
 }
 
@@ -92,5 +92,5 @@ body {
   background-image: url('./assets/oxygen.png');
 }
 .highlight {
-  color: var(--Peach);
+  color: var(--Maroon);
 }
