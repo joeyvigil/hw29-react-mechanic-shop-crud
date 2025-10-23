@@ -63,7 +63,10 @@ const Profile = () => {
   return (
     <div className='container'>
       <div className='row'>
+
       <div className='col text-center me-2'> 
+        <div className='small-container'>
+
         
       {profile ? (
         <>
@@ -77,13 +80,19 @@ const Profile = () => {
       ) : (
         <p>Loading profile...</p>
       )}
+
       </div>
+      </div>
+
         <div className='col text-center me-2'>
+          <div style={{margin: '20px'}}>
           <img 
             src={`https://eu.ui-avatars.com/api/?name=${profile?.first_name || 'John'}+${profile?.last_name || 'Doe'}&size=250&background=random&rounded=true&bold=true&color=ffffff`}
             alt={`Avatar`}
           />
+          </div>
         </div>
+
       </div>
     </div>
   )

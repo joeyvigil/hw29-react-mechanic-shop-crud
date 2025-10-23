@@ -49,7 +49,7 @@ function App() {
 
           <div className='d-flex'>
           {token ? (<>
-            <h4 className='me-4'>Hello {profileInfo?.first_name} </h4>
+            <h4 className='me-4'>Hello <span className='highlight'>{profileInfo?.first_name}</span> </h4>
             <a className='me-4' href="/profile">profile</a> 
             <a className='me-4' href="/update">update</a> 
             <button className="btn" onClick={() => {
@@ -64,12 +64,15 @@ function App() {
         </nav>
         </div>
         </div>
+        
+        
         <Routes>
           <Route path='/' element={<Login/>} />
           <Route path='/profile' element={<Profile/>} />
           <Route path='/update' element={<Update/>} />
           <Route path='/register' element={<Register/>} />
         </Routes>
+        
 
     </>
   )
