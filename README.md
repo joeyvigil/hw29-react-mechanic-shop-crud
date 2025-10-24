@@ -6,7 +6,7 @@
 
 Vercel Link: 
 *(Render backend may be asleep, please allow time to wake up)*
-https://mech-shop-lovat.vercel.app/
+https://hw29-react-mechanic-shop-crud.vercel.app/
 
 ### desktop
 ![image](images/register.jpg)
