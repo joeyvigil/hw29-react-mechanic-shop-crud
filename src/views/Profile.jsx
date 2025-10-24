@@ -80,7 +80,7 @@ const Profile = () => {
                 <p>Address: {profile.address}</p>
                 <p>Salary: ${profile.salary}</p>
                 <button className="btn btn-primary me-2" onClick={() => navigate('/update')} > Update Profile </button>
-                <button className="btn btn-danger me-2" > Delete </button>
+                <button className="btn btn-danger me-2" onClick={(e) =>handleDelete(e)}> Delete </button>
               </>
             ) : (
               <p>Loading profile or Missing Token...</p>
