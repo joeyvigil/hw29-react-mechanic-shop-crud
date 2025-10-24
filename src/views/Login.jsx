@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -25,9 +27,10 @@ const Login = () => {
             console.log('Response data:', data);
 
             if (response.ok) {
-                alert('message: ' + data.message);
+                alert('Success! message: ' + data.message);
                 localStorage.setItem('token', data.token);
                 console.log('Token stored in localStorage: ', data.token);
+                navigate('/profile');
                 window.location.reload();
             } else {
                 alert('Login failed: ' + data.message);
@@ -43,7 +46,7 @@ const Login = () => {
             <div className="small-container">
                 <h1 className="text-center">Welcome</h1>
                 <form onSubmit={formSubmit}>
-                    
+
                     {/* Email input */}
                     <div className="mb-2">
                         <input

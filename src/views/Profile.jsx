@@ -68,7 +68,7 @@ const Profile = () => {
   return (
     <div className="container">
       <div className="row">
-        
+
         <div className="col text-center me-2">
           <div className="small-container">
             {profile ? (
@@ -95,6 +95,8 @@ const Profile = () => {
                 profile?.first_name || 'John'
               }+${profile?.last_name || 'Doe'}`}
               alt="Profile Avatar"
+              width="300"
+              height="300"
             />
           </div>
         </div>

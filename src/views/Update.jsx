@@ -75,7 +75,7 @@ const Update = () => {
   return (
     <div className='container'>
       <div className='row'>
-        <div className='col-12 col-xxl-6'>
+        <div className='col'>
           <div className='small-container'>
             <h1 className='text-center'>Update Profile</h1>
             
@@ -134,14 +134,19 @@ const Update = () => {
           </div>
         </div>
         
-        <div className='col-12 col-xxl-6'>
-          <div className='text-center me-2' style={{ margin: '20px' }}>
-            <img 
-              src={`https://avatar.iran.liara.run/public/boy?username=${profile?.first_name || 'John'}+${profile?.last_name || 'Doe'}`} 
-              alt="Profile Avatar" 
+        <div className="col text-center me-2">
+          <div style={{ margin: '20px' }}>
+            <img
+              src={`https://avatar.iran.liara.run/public/boy?username=${
+                profile?.first_name || 'John'
+              }+${profile?.last_name || 'Doe'}`}
+              alt="Profile Avatar"
+              width="300"
+              height="300"
             />
           </div>
         </div>
+
       </div>
     </div>
   );
