@@ -2,6 +2,20 @@
 
 *Create a React front end for your Mechanic Workshop Flask Backend.*
 
+## Preview
+
+Vercel Link: 
+*(Render backend may be asleep, please allow time to wake up)*
+https://mech-shop-lovat.vercel.app/
+
+### desktop
+![image](images/register.jpg)
+![image](images/profile.jpg)
+![image](images/delete.jpg)
+
+### mobile 
+![image](images/mobile.jpg)
+
 ## Flask Touch-Up
 
 Before starting, ensure that you have **CORS** active on your Flask server:
@@ -19,6 +33,8 @@ Before starting, ensure that you have **CORS** active on your Flask server:
     ```python
     CORS(app)
     ```
+added cors to flask app:
+![image](images/CORS.jpg)
 
 > **Note:**  
 > If your app isn't deployed, you can run your Flask app locally and make API requests from your React app to `localhost:5000` (similar to Postman).
@@ -27,6 +43,9 @@ Before starting, ensure that you have **CORS** active on your Flask server:
 1. created new render database **mechanic_db2**
 2. get external db url from new db -> replace render web service environment variable 
 3. pushing commit now to trigger github actions
+
+new database is connected:
+![image](images/newDB.jpg)
 
 ## React Front End
 
