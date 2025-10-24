@@ -49,6 +49,31 @@ new database is connected:
 
 ![image](images/newDB.jpg)
 
+## Fixing Routing on Vercel
+
+1. Create a `vercel.json` file in the root of your project:
+```json
+{
+   "rewrites":  [
+       {"source": "/(.*)", "destination": "/"}
+    ]
+}
+```
+
+## Fixing Images on Vercel
+
+make sure to put images in `public` and `assets`folder and reference them like this:
+```jsx
+<img src="react.svg" alt="Logo" width="30" height="24" 
+className="d-inline-block align-text-top" />
+```
+```css
+body {
+  background-image: url('./assets/oxygen.png');
+}
+```
+
+
 ## React Front End
 
 Create a front end for your Mechanic Shop API, similar to what we did in class.
