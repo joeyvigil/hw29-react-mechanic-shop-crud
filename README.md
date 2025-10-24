@@ -40,11 +40,13 @@ added cors to flask app:
 > If your app isn't deployed, you can run your Flask app locally and make API requests from your React app to `localhost:5000` (similar to Postman).
 
 ## Render free DB is deactivated to so need to make a new one
+```txt
 1. created new render database **mechanic_db2**
 2. get external db url from new db -> replace render web service environment variable 
 3. pushing commit now to trigger github actions
-
+```
 new database is connected:
+
 ![image](images/newDB.jpg)
 
 ## React Front End
@@ -119,17 +121,17 @@ Create a front end for your Mechanic Shop API, similar to what we did in class.
 
 ## Notes (for personal reference)
 
-Terminal commands: (make reacted javascript project and install react-router-dom)
+**Terminal commands: (make reacted javascript project and install react-router-dom)**
 ```bash
 npm create vite@latest
 npm install react-router-dom
 ```
-jsx snippets:
+**jsx snippets:**
 ```jsx
 rafce
 ```
 
-Dylan's related projects:
+**Dylan's related projects:**
 
 https://github.com/dkatina/fullstack-frontend
 
