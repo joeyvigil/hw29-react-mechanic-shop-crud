@@ -44,7 +44,7 @@ function App() {
         <nav className="navbar">
 
           <div className="navbar-brand">
-            <img src="/react.svg" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" /> React Mechanic Shop
+            <img src="react.svg" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" /> React Mechanic Shop
           </div>
 
           <div className='d-flex'>
